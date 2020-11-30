@@ -2,29 +2,23 @@ function reduceFraction(a, b) {
   let c=[];
     if (a>b){
       for (let i=1;i<a+1;i++){
-          if (a%i===0 && b%i===0){
+          if (a%i===0 && b%i===0)
               a=a/i;
               b=b/i;
-            }
-          if (i===b || a%b===0){
-                  a=a/b;
+          if (i===a && a%b===0)
                   b=1;
-                  break
-                }
+                  a=a/b;
                 }
               }
 
      else if (b>a){
       for (let i=1;i<b+1;i++) {
-          if (b % i === 0 && a % i === 0){
+          if (b % i === 0 && a % i === 0)
            a = a / i;
            b = b / i;
-         }
-          if (i===a || b%a === 0){
-               b = b/a;
+          if (i===b && b%a === 0)
                a = 1;
-               break
-             }
+               b = b/a;
              }
            }
       else{
@@ -35,4 +29,4 @@ function reduceFraction(a, b) {
     c=[a,b];
     return c;
 }
-console.log(reduceFraction(8,32))
+console.log(reduceFraction(7,21))

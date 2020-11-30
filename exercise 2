@@ -13,4 +13,4 @@ def isMagicDate(d, m, y):
      else:
         return print(False)
 
-print(isMagicDate(32, 1, 1931))
+print(isMagicDate(30, 1, 1931))

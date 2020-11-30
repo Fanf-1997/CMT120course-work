@@ -8,4 +8,4 @@ def sublist(l):
         for j in range(0,len(L0)):  # 变长
             L0.append(L0[j] + [l[i]])
     print('List =', L0)
-print(sublist([1,2,3]))#如果有重复元素怎么办
+print(sublist([1,2,3]))#如果有重复元素怎么办--
