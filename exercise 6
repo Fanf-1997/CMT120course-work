@@ -1,0 +1,56 @@
+# 翻译数字=>英语
+def int2Text(num):
+    a=0
+    b=0
+    c=0
+    d=int(num)
+    number={1:'one',2:'two',3:'three',4:'four',
+               5:'five',6:'six',7:'seven',8:'eight',
+               9:'nine',0:'zero'}
+    numberpw10={10:'ten',11:'eleven',12:'twelve',13:'thirteen',
+                14:'fourteen',15:'fifteen',16:'sixteen',
+                17:'seventeen',18:'eighteen',19:'nineteen',
+                }
+    numberpwo={2:'twenty',3:'thirty',4:'forty',5:'fifty',
+               6:'sixty',7:'seventy',8:'eighty',9:'ninety',
+               }
+    if d//100!=0:#有百位
+        a=d//100
+        d = d - a * 100
+        a=number[a]+' '+'hundred'
+
+        if d<10:#没十位
+            c=d%10
+            c=number[c]
+            b=''
+            print(a+' '+'and'+' '+c)
+        else:
+          if d%10==0:
+              b=d//10
+              b=numberpwo[b]
+              print(a + ' ' + 'and'+' '+b )
+          else:  # 有十位(>20)
+              b = d // 10
+              b = numberpwo[b]
+              c = d % 10
+              c = number[c]
+              print(a + ' ' + b + ' ' + c)
+          if d<20:#有十位(<20)
+                b = numberpw10[num]
+
+
+    else:
+        if d<10:#没百位,没十位
+          c = number[num]
+          print(c)
+        elif d>=10 and d<20:#没百位，有十位(<20)
+          b=numberpw10[num]
+          print(b)
+        else:#没百位，有十位(>20)
+            b=d//10
+            b=numberpwo[b]
+            c=d%10
+            c=number[c]
+            print(b+' '+c)
+    return None
+int2Text(685)

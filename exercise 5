@@ -1,0 +1,36 @@
+#每个字母在转换完成后必须要加空格，并且忽略掉全部符号
+#注意大小写
+def morseCode(message):
+    b=''
+    c=''
+    alphabet=dict(A='.-',B='-...',C='-.-.',
+                D='-..',E='.',F='..-.',G='--.',H='....',
+                I='..',J='.---',K='-.-',L='.-..',M='--',
+                  N='-.',O='---',P='.--.',Q='--.-',
+                  R='.-.',S='...',T='-',U='..-',V='...-',
+                  W='.--',X='-..-',Y='-.--',Z='--..')
+    numbermap={1:'.----',2:'..---',3:'...--',4:'....-',
+               5:'.....',6:'-....',7:'--...',8:'---..',
+               9:'----.',0:'-----'}
+    #转换函数
+    def transfer(a):
+        if a == a.lower():#如果是小写变成大写
+            a=a.upper()
+            if a in alphabet :
+                a=alphabet[a]
+            else:
+                a=numbermap.get(a)
+        else:#本来就是大写
+            if a in alphabet:
+                a=alphabet[a]
+        return a
+    #判断有没有符号
+    for i in range(len(message)):
+        if message[i].isalnum() is False:
+            message.replace(message[i],'',1)
+        else:
+           c+=' '+transfer(message[i])
+
+    print(c)
+    return None
+morseCode('qian,dong FAN')

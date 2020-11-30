@@ -1,0 +1,31 @@
+file = open('test1', 'r')
+file0 = file.readlines()
+file.close()
+file1 = ''
+file2 = ''
+a = 1
+#b = 0
+list = []
+
+for i in range(0, len(file0)):
+   if '\n' in file0[i]:
+      file0[i] = file0[i].replace('\n', ' ')
+      file1 += file0[i]
+   else:
+      file1 += file0[i]
+for k in range(0, len(file1)):
+   if a <=49 :
+      if file1[k+1]==' 'and file1[k+1]!=' ':
+
+      file2+=file1[k]
+      a += 1
+      continue
+   else:
+      a = 1
+      list.append(file2)
+      file2=''
+      #b += 1
+
+      continue
+print(list)
+

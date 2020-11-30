@@ -1,0 +1,29 @@
+# length为每一行的最大长度
+def consistentLineLength(filename, length):
+    file = open(filename, 'r')
+    file0 = file.readlines()
+    file.close()
+    file1 = ''
+    a = 0
+    b = 0
+    list = []
+
+    for i in range(0, len(file0)):
+        if '\n' in file0[i]:
+            file0[i] = file0[i].replace('\n', ' ')
+            file1 += file0[i]
+        else:
+            file1 += file0[i]
+    for k in range(0, len(file1)):
+        a += 1
+        if a <= length:
+            list= file1[k]
+            continue
+        else:
+            a = 0
+            b += 1
+            continue
+    print(list)
+
+    return None
+consistentLineLength('test1', 50)
