@@ -4,11 +4,9 @@ def isMagicDate(d, m, y):
     if d>31 or m>12:
         return print('You are living a magic life')
     else:
-     y1=y%10
-     y2=y/10%10
-     y3=y2*10+y1
+     y1=y%100
 
-     if d*m==y3:
+     if d*m==y1:
         return print(True)
      else:
         return print(False)

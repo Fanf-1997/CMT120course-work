@@ -5,7 +5,9 @@
 def sublist(l):
     L0 = [[]]#先规定一个空集
     for i in range(0,len(l)):  # 确定长度
-        for j in range(0,len(L0)):  # 变长
-            L0.append(L0[j] + [l[i]])
-    print('List =', L0)
-print(sublist([1,2,3]))#如果有重复元素怎么办--
+        L2 = []  # L[i]代表[1],[2],[3]
+        for j in range(i,len(l)):  # 变长
+            L2.append(l[j])
+            L0.append(L2[:])
+    return L0
+print(sublist([1,2,3,4]))#如果有重复元素怎么办--

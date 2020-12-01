@@ -1,25 +1,45 @@
 file = open('test1', 'r')
-file0 = file.readlines()
+file0 = file.readlines()#终极数组
 file.close()
 file1 = ''
 file2 = ''
 a = 1
 #b = 0
 list = []
-
-for i in range(0, len(file0)):
+list1 = []
+list2=[]
+for i in range(0, len(file0)):#将file0变成字符串样式
    if '\n' in file0[i]:
       file0[i] = file0[i].replace('\n', ' ')
       file1 += file0[i]
    else:
       file1 += file0[i]
+   list1=file1.split(sep=' ')
+   print(file1)
+   print(list1)
+for k in range(0, len(list1)):
+    #print(list1.index('conversations?"'))
+    if len(file2+list1[k])>50:
+      file2 = file2
+      list2.append(file2)
+      file2=list1[k]+' '#下一行开头
+    else:
+       file2=file2+list1[k]+' '
+list2.append(file2)
+
+print(list2)
+
+
+
+
+'''
 for k in range(0, len(file1)):
    if a <=49 :
-      if file1[k+1]==' 'and file1[k+1]!=' ':
+      if file1[k+1]==' ' and file1[k+1]!=' ':
 
-      file2+=file1[k]
-      a += 1
-      continue
+         file2+=file1[k]
+         a += 1
+         continue
    else:
       a = 1
       list.append(file2)
@@ -28,4 +48,4 @@ for k in range(0, len(file1)):
 
       continue
 print(list)
-
+'''
